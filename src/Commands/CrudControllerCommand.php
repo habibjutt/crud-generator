@@ -103,7 +103,8 @@ class CrudControllerCommand extends GeneratorCommand
 
         $validationRules = '';
         if (trim($validations) != '') {
-            $validationRules = "\$this->validate(\$request, [";
+            // $validationRules = "\$this->validate(\$request, [";
+            $validationRules = "\$request->validate([";
 
             $rules = explode(';', $validations);
             foreach ($rules as $v) {
